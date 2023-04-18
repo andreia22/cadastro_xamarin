@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jmYm/GTsgn110CGfwOCTsTVgUXkzbREbIXYwsZkbjcSNmduQmY9y6MBCve1YdjipGpj+x+0KQ+FgwJtZRbxQhg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ti.andreia.AD\\source\\repos\\Cadastro\\Cadastro\\Cadastro.iOS\\Cadastro.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ti.andreia.AD\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ti.andreia.AD\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\ti.andreia.AD\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

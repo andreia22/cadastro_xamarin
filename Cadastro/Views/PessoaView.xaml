@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+    <!-- Em seguida é a segunda vista. Usaremos isso para adicionar 
+    e editar os itens da lista de tarefas -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cadastro.Views.PessoaView"
+             Title="Novo Cadastro de Pessoas">   
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Command="{Binding Save }" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="14">
+        
+        <Label Text="Nome" />
+        <Entry PlaceHolder="{Binding Pessoa.FistName}" />
+        
+         <Label Text="Sobrenome" />
+        <Entry PlaceHolder="{Binding Pessoa.LastName}" />
+
+        <Label Text="Data Nascimento" />
+        <DatePicker  Date="{Binding Pessoa.BirthDate}"/>
+        
+         <Label Text="Rua" />
+        <Entry PlaceHolder="{Binding Pessoa.Street}" />
+        
+        <Label Text="Bairro" />
+        <Entry PlaceHolder="{Binding Pessoa.Neighborhood}" />
+        
+        <Label Text="Numero" />
+        <Entry PlaceHolder="{Binding Pessoa.Number}" />
+        
+         <Label Text="Cidade" />
+        <Entry PlaceHolder="{Binding Pessoa.Cidade}" />
+        
+         <Label Text="Estado" />
+        <Entry PlaceHolder="{Binding Pessoa.State}" />
+        
+        <Label Text="Pais" />
+        <Entry PlaceHolder="{Binding Pessoa.Country}" />
+        
+        
+         <StackLayout Orientation="Horizontal">
+            <Switch  IsToggled="{Binding Pessoa.Competed}"/>
+            <Label Text="Finalizado" />
+        </StackLayout>
+
+ 
+    </StackLayout>
+    <!-- O conteúdo da página usa StackLayout para estruturar os controles. StackLayout
+adiciona um elemento verticalmente (a opção padrão) ou horizontalmente com base no espaço
+calcula que o elemento ocupa. Este é um processo intensivo de CPU, portanto, devemos usar apenas
+em pequenas porções do nosso layout. No StackLayout, adicionamos um controle Label que é uma linha de
+texto sobre o controle Entry que vem abaixo dele. O controle Entry é uma entrada de texto
+controle que contém o nome do item da lista de tarefas. Temos então uma seção
+para DatePicker, onde o usuário pode selecionar uma data de vencimento para o item da lista de tarefas. O final
+é um controle Switch, que renderiza um botão de alternância para controlar quando um item é
+completo, bem como um título próximo a ele. Como queremos que eles sejam exibidos ao lado de cada
+outro horizontalmente, usamos um controle StackLayout horizontal para fazer isso.-->
+</ContentPage>

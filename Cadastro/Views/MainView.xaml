@@ -1,0 +1,123 @@
+﻿>
+    <?xml version="1.0" encoding="utf-8" ?>
+    
+    <!-- A linha xmlns:local="clr-namespace:DoToo" define esse namespace para nós. -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CadastroPessoa"
+             x:Class="Cadastro.Views.MainView"
+             Title="Lista de  Afazeres"> 
+<!-- código do esqueleto e XAML necessário para as exibições. 
+    A primeira visualização que vamos criar é MainView,qual é a view que 
+    será carregada primeiro: -->
+    
+    <!-- Bara de menu -->
+<!-- O nó ContentPage.Toolbar define um item da barra de ferramentas para 
+adicionar novos itens de tarefas pendentes.-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StatusColorConverter
+                x:Key="statusColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddPessoa}"/>
+        </ContentPage.ToolbarItems>
+    
+    
+    <!-- Bara de menu -->
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+        <Button Text="Filter " />
+        <ListView Grid.Row="1" RowHeight="70" ItemsSource="{Binding Pessoa}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="15,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView Grid.RowSpan="2" />
+                            
+                            <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.FirstName}"
+                                   FontSize="Large" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.LastName}"
+                                   FontSize="Large" />
+                            
+                            
+                            <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.BirthDate}"
+                                   Grid.Row="1"
+                                   FontSize="Micro" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.Street}"
+                                   FontSize="Large" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.Neighborhood}"
+                                   FontSize="Large" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.Number}"
+                                   FontSize="Large" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.City}"
+                                   FontSize="Large" />
+                            
+                             <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.State}"
+                                   FontSize="Large" />
+                            
+                            <Label Grid.Column="1"
+                                   Text="{Binding Pessoa.Country}"
+                                   FontSize="Large" />
+                            
+                            <Label Grid.Column="1"
+                                   Text="Finalizado"
+                                   IsVisible="{Binding Pessoa.Completed}"
+                                   Grid.Row="1"
+                                   HorizontalTextAlignment="End"    
+                                   FontSize="Micro" />
+                                   
+                           
+                        </Grid>
+                        
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </Grid>
+            
+    
+    <!-- Como queremos que nossa exibição MainView contenha uma lista de itens e um botão no
+top para alternar um filtro (para alternar entre todos os itens e apenas itens ativos), precisamos adicionar um
+Controle de layout para posicioná-los na página. Grid é um controle que permite dividir
+o espaço disponível com base em linhas e colunas.
+Para nossa exibição MainView, queremos adicionar duas linhas. A primeira linha é um espaço calculado por
+a altura do botão (Height="auto") e a segunda linha ocupa todo o restante
+espaço para o ListView (Height="*"). Elementos como ListView são posicionados no
+grade usando os atributos Grid.Row e Grid.Column. Ambas as propriedades são padronizadas para 0
+se não forem especificados, assim como o botão.
+ListView é um controle que apresenta itens em uma lista, que coincidentemente é exatamente o que nosso
+aplicativo vai fazer. Vale a pena notar que no Xamarin.Forms 4, um novo controle chamado
+CollectionView foi introduzido. Os capítulos subseqüentes usarão esse controle, mas
+queria apresentar a você o bom e velho controle ListView também.-->
+</ContentPage>
+    
+    
